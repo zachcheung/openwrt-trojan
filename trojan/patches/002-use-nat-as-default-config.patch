@@ -1,0 +1,11 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -107,7 +107,7 @@ else()
+ 
+     include(GNUInstallDirs)
+     install(TARGETS trojan DESTINATION ${CMAKE_INSTALL_BINDIR})
+-    install(FILES examples/server.json-example DESTINATION ${CMAKE_INSTALL_FULL_SYSCONFDIR}/trojan RENAME config.json)
++    install(FILES examples/nat.json-example DESTINATION ${CMAKE_INSTALL_FULL_SYSCONFDIR}/trojan RENAME config.json)
+     set(DEFAULT_CONFIG ${CMAKE_INSTALL_FULL_SYSCONFDIR}/trojan/config.json CACHE STRING "Default config path")
+     add_definitions(-DDEFAULT_CONFIG="${DEFAULT_CONFIG}")
+     install(FILES docs/trojan.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
