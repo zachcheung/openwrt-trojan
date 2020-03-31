@@ -1,5 +1,6 @@
 #!/bin/sh /etc/rc.common
 # Copyright (C) 2018 wongsyrone
+# Copyright (C) 2020 Zach Cheung
 
 . /lib/functions.sh
 . /usr/share/libubox/jshn.sh
@@ -9,7 +10,7 @@ USE_PROCD=1
 #PROCD_DEBUG=1
 
 PROG=/usr/sbin/trojan
-CONF=/etc/trojan.json
+CONF=/etc/trojan/config.json
 
 config_load "trojan"
 
