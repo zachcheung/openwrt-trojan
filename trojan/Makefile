@@ -7,16 +7,17 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=trojan
-PKG_VERSION:=1.15.1
+PKG_VERSION:=1.16.0
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/trojan-gfw/trojan.git
+PKG_MIRROR_HASH:=2f7f60ae2ef6e57b9565b984df2e7b9560786ad0a63402e93523804f140e39ca
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_VERSION:=0bad2988c60200c15786baf6b9ea42d66ba2109c
+PKG_SOURCE_VERSION:=8606b7110fe79f8ab02d60c897f87ffb0a9b23f0
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 CMAKE_INSTALL:=1
-PKG_BUILD_PARALLEL:=0
+PKG_BUILD_PARALLEL:=1
 
 PKG_BUILD_DEPENDS:=openssl1.1
 
@@ -85,5 +86,9 @@ define Package/trojan/install
 	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/etc/trojan/config.json $(1)/etc/trojan/config.json
 endef
 
+define Package/trojan/conffiles
+/etc/config/trojan
+/etc/trojan.json
+endef
 
 $(eval $(call BuildPackage,trojan))
